@@ -1,0 +1,7 @@
+
+W
+java:S1444"<Make this "public static DEPOSIT_FEE_PERCENTAGE" field final(İš—ˆúÿÿÿÿ
+}
+java:S1104"bMake DEPOSIT_FEE_PERCENTAGE a static final constant or non-public and provide accessors if needed.(İš—ˆúÿÿÿÿ
+|
+java:S3008"aRename this field "DEPOSIT_FEE_PERCENTAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İš—ˆúÿÿÿÿ
