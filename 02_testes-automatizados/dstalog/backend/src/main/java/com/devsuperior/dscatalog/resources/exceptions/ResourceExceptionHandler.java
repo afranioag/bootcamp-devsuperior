@@ -31,7 +31,7 @@ public class ResourceExceptionHandler {
         StandardError err = new StandardError();
         err.setTimestamp(Instant.now());
         err.setStatus(HttpStatus.BAD_REQUEST.value());
-        err.setError("Data base Excepetion");
+        err.setError("Data base Exception");
         err.setMessage(ex.getMessage());
         err.setPath(request.getRequestURI());
 
