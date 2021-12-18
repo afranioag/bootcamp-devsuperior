@@ -119,6 +119,7 @@ public class User implements UserDetails, Serializable {
 				.collect(Collectors.toList());
 	}
 
+
 	@Override
 	public String getUsername() {
 		return email;
