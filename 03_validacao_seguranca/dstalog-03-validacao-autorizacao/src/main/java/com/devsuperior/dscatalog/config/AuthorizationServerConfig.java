@@ -1,6 +1,6 @@
 package com.devsuperior.dscatalog.config;
 
-import com.devsuperior.dscatalog.components.JWTTokenEnhancer;
+import com.devsuperior.dscatalog.components.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +43,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JWTTokenEnhancer tokenEnhancer;
+    private JwtTokenEnhancer tokenEnhancer;
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -65,13 +65,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
         TokenEnhancerChain chain = new TokenEnhancerChain();
         chain.setTokenEnhancers(Arrays.asList(accessTokenConverter, tokenEnhancer));
-        System.out.println("\n\n\n-----------");
-        System.out.println(accessTokenConverter);
-        System.out.println(tokenEnhancer);
-        System.out.println("-----------\n\n");
-       endpoints.authenticationManager(authenticationManager)
-               .tokenStore(tokenStore)
-               .accessTokenConverter(accessTokenConverter)
-               .tokenEnhancer(chain);
+
+        endpoints.authenticationManager(authenticationManager)
+                .tokenStore(tokenStore)
+                .accessTokenConverter(accessTokenConverter)
+                .tokenEnhancer(chain);
     }
 }
